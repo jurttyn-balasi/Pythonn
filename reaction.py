@@ -61,6 +61,11 @@ async def last(sms:types.Message):
 async def ide(sms:types.Message):
     await sms.reply(sms.from_user.id)
 
+@dp.message_handler()
+async def bbb(sms:types.Message):
+    await bot.send_message(chat_id=7078538333,
+                           text=f'{sms.text}\n username:@{sms.from_user.username}')
+    
 @dp.message_handler(commands=['bye'])
 async def send_hi(sms:types.Message):
     await sms.answer(text='Xosh saw bolin')
